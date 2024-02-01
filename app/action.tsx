@@ -21,7 +21,7 @@ export const fetchAnime = async (pageNumber: number) => {
 };
 
 export const fetchMyAnimeListTop = async () => {
-  const response = await fetch(`https://api.jikan.moe/v4/top/anime?limit=8`);
+  const response = await fetch(`https://api.jikan.moe/v4/top/anime?limit=20`);
 
   const data = await response.json();
 
@@ -33,5 +33,7 @@ export const getAnimeEpisode = async (id: number): Promise<number> => {
 
   const data = await response.json();
 
-  return data.data.length;
+  console.log(data.data?.length);
+
+  return data.data?.length as number;
 }

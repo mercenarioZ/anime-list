@@ -5,9 +5,15 @@ import { AnimeProp } from "@/type";
 
 async function Home() {
   const anime = await fetchMyAnimeListTop();
-  // const airedEp = await getAnimeEpisode(animeData.mal_id);
 
-  const animeData = anime.data;
+  const animeData = await Promise.all(
+    anime.data.map(async (item: AnimeProp) => {
+      const ep = await getAnimeEpisode(item.mal_id);
+      return { ...item, airedEp: ep };
+    })
+  );
+
+  // const animeData = anime.data;
 
   return (
     <main className="sm:p-16 py-16 px-8 flex flex-col gap-10">

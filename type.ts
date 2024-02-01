@@ -1,5 +1,5 @@
 export interface AnimeProp {
-  mal_id: string;
+  mal_id: number;
   url: string;
   images: {
     jpg: {

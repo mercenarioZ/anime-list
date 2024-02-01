@@ -1,20 +1,11 @@
-import Image from "next/image";
-import { MotionDiv } from "./MotionDiv";
 import { AnimeProp } from "@/type";
+import clsx from "clsx";
+import Image from "next/image";
 
 interface Prop {
   anime: AnimeProp;
   index: number;
 }
-
-const variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-};
 
 function AnimeCard({ anime }: Prop) {
   return (
@@ -34,28 +25,37 @@ function AnimeCard({ anime }: Prop) {
         </a>
       </div>
 
-      <div className="py-4 flex flex-col gap-3">
+      <div className="py-4 flex flex-col gap-3 w-full items-center">
         <div className="flex justify-between items-center gap-1">
           <h2 className="font-bold text-white text-xl line-clamp-1 w-full">
             {anime.title}
           </h2>
         </div>
 
-        {/* status */}
+        {/* status: airing, finished,... */}
         <div>{anime.status}</div>
 
-        <div className="flex gap-4 items-center">
-          <div className="flex flex-row gap-2 items-center">
-            {/* episode icon */}
-            <Image
-              src="./episodes.svg"
-              alt="episodes"
-              width={20}
-              height={20}
-              className="object-contain"
-            />
-            {/* <p className="text-base text-white font-bold">{anime.airedEp}</p>/ */}
-            <p className="text-base text-white font-bold">{anime.episodes}</p>
+        <div className={clsx("flex items-center", anime.type === "TV" && "gap-3")}>
+          <div className="flex justify-center items-center">
+            {anime.type === "TV" && (
+              <div className="flex">
+                {/* episode icon */}
+                <Image
+                  src="./episodes.svg"
+                  alt="episodes"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+                <p className="text-base text-white font-bold">
+                  {anime.airedEp >= 100 ? "?" : anime.airedEp}
+                </p>
+                /
+                <p className="text-base text-white font-bold">
+                  {anime.episodes}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-row gap-2 items-center">
