@@ -9,8 +9,8 @@ interface Prop {
 
 function AnimeCard({ anime }: Prop) {
   return (
-    <div className="relative w-full max-w-xs flex flex-col items-center justify-center bg-neutral-300/5 hover:bg-neutral-400/30 transition rounded-md p-3">
-      <div className="relative cursor-pointer transition w-full rounded-md h-[28vh] overflow-hidden">
+    <div className="relative w-full max-w-xs flex flex-col items-center justify-center bg-neutral-300/10 hover:bg-neutral-400/20 transition rounded-md p-3">
+      <div className="relative cursor-pointer transition w-full rounded-md h-[42vh] overflow-hidden">
         <a
           target="_blank"
           href={anime.url}
@@ -19,8 +19,8 @@ function AnimeCard({ anime }: Prop) {
           <Image
             src={anime?.images?.jpg?.image_url}
             alt={anime.title}
-            fill
-            className="object-cover"
+            className="object-fit"
+            layout="fill"
           />
         </a>
       </div>

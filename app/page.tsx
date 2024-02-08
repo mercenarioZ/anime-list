@@ -22,6 +22,8 @@ async function Home() {
 
       <h2 className="text-3xl text-white font-bold">Explore Anime</h2>
 
+      <p className="text-neutral-400">This page shows the top 20 highest rated anime</p>
+
       <section className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
         {animeData.map((item: AnimeProp, index: number) => (
           <AnimeCard

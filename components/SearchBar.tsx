@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const SearchBar: React.FC = () => {
   return (
@@ -6,7 +6,7 @@ const SearchBar: React.FC = () => {
       <input
         type="text"
         placeholder="Search..."
-        className="flex-1 px-4 py-2 border border-gray-700 rounded-md focus:outline-none"
+        className="flex-1 px-4 py-2 border border-gray-800 rounded-md focus:outline-none"
       />
       <button
         type="button"
