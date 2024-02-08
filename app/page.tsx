@@ -1,5 +1,6 @@
+import { fetchMyAnimeListTop } from "@/actions/fetchMyAnimeListTop";
+import { getAnimeEpisode } from "@/actions/getAnimeEpisode";
 import AnimeCard from "@/components/AnimeCard";
-import { fetchMyAnimeListTop, getAnimeEpisode } from "./action";
 import SearchBar from "@/components/SearchBar";
 import { AnimeProp } from "@/type";
 
