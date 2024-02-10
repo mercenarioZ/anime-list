@@ -48,7 +48,7 @@ function AnimeCard({ anime }: Prop) {
                   className="object-contain"
                 />
                 <p className="text-base text-white font-bold">
-                  {anime.airedEp >= 100 ? "?" : anime.airedEp}
+                  {anime.airedEp >= 100 ? ">100" : anime.airedEp}
                 </p>
                 /
                 <p className="text-base text-white font-bold">
