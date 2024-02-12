@@ -1,20 +1,18 @@
+"use client";
+
 import React from "react";
+import { Input } from "./ui/input";
 
 const SearchBar: React.FC = () => {
+  const [searchQuery, setSearchQuery] = React.useState<string>("");
+
   return (
-    <div className="flex items-center justify-center w-full">
-      <input
-        type="text"
-        placeholder="Search..."
-        className="flex-1 px-4 py-2 border border-gray-800 rounded-md focus:outline-none"
-      />
-      <button
-        type="button"
-        className="ml-2 px-4 py-2 bg-neutral-700 text-white rounded-md hover:bg-neutral-600 transition focus:outline-none"
-      >
-        Search
-      </button>
-    </div>
+    <Input
+      onChange={(event) => setSearchQuery(event.target.value)}
+      value={searchQuery}
+      className="bg-neutral-900 text-white focus:border-none focus:outline-none"
+      placeholder="Enter your anime's name..."
+    />
   );
 };
 

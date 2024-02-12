@@ -33,7 +33,7 @@ function AnimeCard({ anime }: Prop) {
         </div>
 
         {/* status: airing, finished,... */}
-        <div>{anime.status}</div>
+        <div className="text-white">{anime.status}</div>
 
         <div className={clsx("flex items-center", anime.type === "TV" && "gap-3")}>
           <div className="flex justify-center items-center">

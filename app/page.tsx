@@ -1,6 +1,6 @@
 import { fetchMyAnimeListTop } from "@/actions/fetchMyAnimeListTop";
 import { getAnimeEpisode } from "@/actions/getAnimeEpisode";
-import AnimeCard from "@/components/AnimeCard";
+import AnimeListItem from "@/components/AnimeListItem";
 import SearchBar from "@/components/SearchBar";
 import { AnimeProp } from "@/type";
 
@@ -14,22 +14,37 @@ async function Home() {
     })
   );
 
-  // const animeData = anime.data;
-
   return (
-    <main className="sm:p-16 py-16 px-8 flex flex-col gap-10">
+    <main className="sm:p-16 py-16 px-8 flex flex-col gap-10 text-white">
       <SearchBar />
 
-      <h2 className="text-3xl text-white font-bold">Explore Anime</h2>
+      {/* big title */}
+      <div className="text-5xl text-white font-bold">Explore Anime</div>
 
-      <p className="text-neutral-400">This page shows the top 20 highest rated anime</p>
+      <div className="text-neutral-400">
+        <p className="mb-4">This page shows the top 25 highest rated anime all of time</p>
+        <p>
+          For more information about a specific anime, click on its thumbnail to go to the official
+          website - <span className="font-bold">MyAnimeList</span>
+        </p>
+      </div>
 
-      <section className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
+      {/* <section className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
         {animeData.map((item: AnimeProp, index: number) => (
           <AnimeCard
             key={item.mal_id}
             anime={item}
             index={index}
+          />
+        ))}
+      </section> */}
+
+      <section className="flex flex-col gap-y-4">
+        {animeData.map((item: AnimeProp, index: number) => (
+          <AnimeListItem
+            index={index}
+            key={item.mal_id}
+            anime={item}
           />
         ))}
       </section>

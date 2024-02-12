@@ -13,7 +13,7 @@ export interface AnimeProp {
     {
       type: string;
       title: string;
-    }
+    },
   ];
 
   title: string;
