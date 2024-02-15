@@ -3,6 +3,7 @@ import { getAnimeEpisode } from "@/actions/getAnimeEpisode";
 import AnimeListItem from "@/components/AnimeListItem";
 import SearchBar from "@/components/SearchBar";
 import { AnimeProp } from "@/type";
+import { useState } from "react";
 
 async function Home() {
   const anime = await fetchMyAnimeListTop();
@@ -22,22 +23,15 @@ async function Home() {
       <div className="text-5xl text-white font-bold">Explore Anime</div>
 
       <div className="text-neutral-400">
-        <p className="mb-4">This page shows the top 25 highest rated anime all of time</p>
+        <p className="mb-4">
+          This page shows the top 25 highest rated anime all of time
+        </p>
         <p>
-          For more information about a specific anime, click on its thumbnail to go to the official
-          website - <span className="font-bold">MyAnimeList</span>
+          For more information about a specific anime, click on its thumbnail to
+          go to the official website -{" "}
+          <span className="font-bold">MyAnimeList</span>
         </p>
       </div>
-
-      {/* <section className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
-        {animeData.map((item: AnimeProp, index: number) => (
-          <AnimeCard
-            key={item.mal_id}
-            anime={item}
-            index={index}
-          />
-        ))}
-      </section> */}
 
       <section className="flex flex-col gap-y-4">
         {animeData.map((item: AnimeProp, index: number) => (

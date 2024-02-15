@@ -6,12 +6,14 @@ import { Input } from "./ui/input";
 const SearchBar: React.FC = () => {
   const [searchQuery, setSearchQuery] = React.useState<string>("");
 
+  
+
   return (
     <Input
       onChange={(event) => setSearchQuery(event.target.value)}
       value={searchQuery}
       className="bg-neutral-900 text-white focus:border-none focus:outline-none"
-      placeholder="Enter your anime's name..."
+      placeholder="Search for your anime's name..."
     />
   );
 };
